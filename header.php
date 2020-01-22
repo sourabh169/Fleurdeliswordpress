@@ -121,9 +121,9 @@
                             <?php
                             if ( is_user_logged_in() ) { ?>
                                 <li class="wishlistBtn">
-                                    <a href="#">
+                                    <a href="<?php echo get_option('home'); ?>/wishlist/">
                                         <img src="<?php bloginfo('template_directory'); ?>/assets/images/wishlist.svg" alt="">
-                                        <span>0</span>
+                                        <?php $wishlist_count = YITH_WCWL()->count_products();?><span><?php echo $wishlist_count; ?></span>
                                     </a>
                                 </li>
                             <?php } else {
@@ -147,7 +147,7 @@
     <!-- mini cart  -->
     <div class="miniCartBlock">
         <div class="miniCartBlockInner">
-            <div class="miniCartBlockCloseBtn"><i class="fa fa-close"></i></div>
+            <!-- <div class="miniCartBlockCloseBtn"><i class="fa fa-close"></i></div> -->
             <?php woocommerce_mini_cart(); ?>
         </div>
     </div>

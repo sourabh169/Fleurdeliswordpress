@@ -740,7 +740,7 @@ function ace_wc_login_register() {
 						<div class="space40"></div>
 						<h3>New Customer</h3>
 						<p>Create an account to speed up checkout., make order tracking easier and save your preference fon your next purchase.</p>
-						<a href="<?php echo get_option('home'); ?>/registration" class="btn btn-primary btn-lg">Register Now</a>
+						<a href="<?php echo get_option('home'); ?>/my-account" class="btn btn-primary btn-lg">Register Now</a>
 					</div>
 				</div>
 			</div>

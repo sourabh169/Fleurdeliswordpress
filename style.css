@@ -1373,10 +1373,12 @@ h3.headingPrimary {
     max-width: 100%;
 }
 /*woocommerce-account*/
-body.woocommerce-account .innerPageSection {
+body.woocommerce-account .innerPageSection,
+body.woocommerce-wishlist .innerPageSection {
     background: rgba(196,176,172,0.2);
 }
-body.woocommerce-account .innerPageSection .woocommerce {
+body.woocommerce-account .innerPageSection .woocommerce,
+body.woocommerce-wishlist .innerPageSection .woocommerce {
     display: block;
     position: relative;
     padding: 80px 75px;
@@ -2448,6 +2450,12 @@ textarea::placeholder {
 .myaccHead p {
     color: inherit;
 }
+.myaccHead p a {
+    color: #a087a4;
+}
+.myaccHead p a:hover {
+    color: #C4B0AC;
+}
 .myaccHead h1.headingPrimary {
     font-size: 36px;
     margin-bottom: 40px;
@@ -2498,7 +2506,14 @@ textarea::placeholder {
     margin: 0 0 15px 0;
     color: #C4B0AC;
 }
-.formFieldmyAccount label {
+.editAddressForm {
+    color: #C4B0AC;
+}
+.editAddressForm p {
+    color: inherit;
+}
+.formFieldmyAccount label,
+.editAddressForm label {
     display: block;
     color: inherit;
     font-size: 14px;
@@ -2510,7 +2525,12 @@ textarea::placeholder {
 .formFieldmyAccount input[type="password"],
 .formFieldmyAccount input[type="email"],
 .formFieldmyAccount input[type="tel"],
-.formFieldmyAccount input[type="number"] {
+.formFieldmyAccount input[type="number"],
+.editAddressForm input[type="text"],
+.editAddressForm input[type="password"],
+.editAddressForm input[type="email"],
+.editAddressForm input[type="tel"],
+.editAddressForm input[type="number"] {
     width: 100%;
     height: 50px;
     text-indent: 20px;
@@ -2522,20 +2542,32 @@ textarea::placeholder {
     padding: 0;
     outline: none;
 }
+.editAddressForm input[type="text"],
+.editAddressForm input[type="password"],
+.editAddressForm input[type="email"],
+.editAddressForm input[type="tel"],
+.editAddressForm input[type="number"] {
+    border: none !important;
+    text-indent: 20px !important;
+}
 .formFieldmyAccount input::-moz-placeholder,
-.formFieldmyAccount input:-moz-placeholder {
+.formFieldmyAccount input:-moz-placeholder,
+.editAddressForm input::-moz-placeholder,
+.editAddressForm input:-moz-placeholder {
     color: #C4B0AC;
     opacity: 0.5;
     text-transform: uppercase;
     font-size: 18px;
 }
-.formFieldmyAccount input::placeholder {
+.formFieldmyAccount input::placeholder,
+.editAddressForm input::placeholder {
     color: #C4B0AC;
     opacity: 0.5;
     text-transform: uppercase;
     font-size: 18px;
 }
-.formFieldmyAccount .formFieldmyAccountSelect {
+.formFieldmyAccount .formFieldmyAccountSelect,
+.editAddressForm .select2-container--default .select2-selection--single {
     display: block;
     width: 100%;
     height: 50px;
@@ -2544,6 +2576,22 @@ textarea::placeholder {
     font-size: 14px;
     color: #C4B0AC;
     z-index: 2;
+}
+.editAddressForm .select2-container--default .select2-selection--single {
+    line-height: 50px;
+    border: none;
+}
+.editAddressForm .select2-container--default .select2-selection--single > span {
+    line-height: inherit;
+    padding: 0 20px;
+    color: inherit;
+    outline: none;
+}
+.editAddressForm .select2-container--default .select2-selection--single:hover,
+.editAddressForm .select2-container--default .select2-selection--single:focus,
+.editAddressForm .select2-container--default .select2-selection--single > span:hover,
+.editAddressForm .select2-container--default .select2-selection--single > span:focus {
+    outline: none !important;
 }
 .formFieldmyAccount .formFieldmyAccountSelect i {
     position: absolute;
@@ -2592,6 +2640,32 @@ body.woocommerce-account .btn {
     text-transform: uppercase;
     font-size: 16px;
 }
+.editAddressForm .select2-container--default .select2-selection--single .select2-selection__arrow {
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    top: 0;
+    right: 0;
+}
+.editAddressForm .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    display: block;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    border-color: inherit;
+    border-style: inherit;
+    border-width: inherit;
+    transform: translate(0,-50%) rotate(-45deg);
+    border-left: solid 2px #a087a4;
+    border-bottom: solid 2px #a087a4;
+}
+
 /*checkboxLabel*/
 .checkboxLabel {
     display: block;

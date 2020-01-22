@@ -23,8 +23,8 @@ if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) {
 	$get_addresses = apply_filters(
 		'woocommerce_my_account_get_addresses',
 		array(
-			'billing'  => __( 'Billing address', 'woocommerce' ),
-			'shipping' => __( 'Shipping address', 'woocommerce' ),
+			'billing'  => __( 'Favourite Shipping Address', 'woocommerce' ),
+			'shipping' => __( 'Favourite Shipping Address', 'woocommerce' ),
 		),
 		$customer_id
 	);
@@ -32,7 +32,7 @@ if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) {
 	$get_addresses = apply_filters(
 		'woocommerce_my_account_get_addresses',
 		array(
-			'billing' => __( 'Billing address', 'woocommerce' ),
+			'billing' => __( 'Favourite Shipping Address', 'woocommerce' ),
 		),
 		$customer_id
 	);
@@ -48,10 +48,7 @@ $col    = 1;
 		<p>Store your shipping and billing addresses to speed up checkout. <br />
 		The address you mark as "Favourite" will be already filled in for you when you place a new order.</p>
 	</div>
-	<p>
-		<?php echo apply_filters( 'woocommerce_my_account_my_address_description', esc_html__( 'The following addresses will be used on the checkout page by default.', 'woocommerce' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-	</p>
-
+	
 	<?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) : ?>
 		<div class="u-columns woocommerce-Addresses col2-set addresses">
 	<?php endif; ?>
@@ -63,10 +60,9 @@ $col    = 1;
 			$oldcol  = $oldcol * -1;
 		?>
 
-		<div class="u-column<?php echo $col < 0 ? 1 : 2; ?> col-<?php echo $oldcol < 0 ? 1 : 2; ?> woocommerce-Address">
+		<div class="myAddressColumn u-column<?php echo $col < 0 ? 1 : 2; ?> col-<?php echo $oldcol < 0 ? 1 : 2; ?> woocommerce-Address">
 			<header class="woocommerce-Address-title title">
-				<h3><?php echo esc_html( $address_title ); ?></h3>
-				<a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit"><?php echo $address ? esc_html__( 'Edit', 'woocommerce' ) : esc_html__( 'Add', 'woocommerce' ); ?></a>
+				<h5 class="headingPrimary"><?php echo esc_html( $address_title ); ?><a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit"><?php echo $address ? esc_html__( 'Edit', 'woocommerce' ) : esc_html__( 'Add', 'woocommerce' ); ?><span></span></a></h5>
 			</header>
 			<address>
 				<?php

@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<p>Save the items you want, ready for your next order or as a perfect gift suggestion.</p>
 		</div>
 		<div class="col-md-3">
-			<a href="#" class="btn btn-primary btn-lg">Go to Wishlist</a>
+			<a href="<?php echo get_option('home'); ?>/wishlist/" class="btn btn-primary btn-lg">Go to Wishlist</a>
 		</div>
 	</div>
 	<div class="row myAccountLinksList">
